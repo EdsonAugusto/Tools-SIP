@@ -1,0 +1,35 @@
+Para acessar o cisco
+
+-Abrir o programa putty
+-escolher a opção telnet e colocar o ip que está no cisco no campo hostname
+- clicar em open
+
+Atenção
+Onde se le x.x.x.x no ip route, deve-se colocar o endereço do gateway padrão
+Onde se le x.x.x.x no ip address, deve-se colocar o endereço do no ip publico
+
+
+início:
+
+user_cisco
+en
+senha_cisco
+conf t
+
+no ip route 0.0.0.0 0.0.0.0 'ip do gateway'
+ip route 0.0.0.0 0.0.0.0 'ip do gateway'
+
+interface fast 0/0
+ip address x.x.x.x 255.255.255.x
+
+agora deve-se mudar o endereço ip do computador\notebook para o endereço do gateway
+acessar novamente o cisco com novo endereço de ip
+
+user_cisco
+en
+senha_cisco
+conf t
+
+exit
+exit
+wr
